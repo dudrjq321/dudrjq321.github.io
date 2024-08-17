@@ -1,0 +1,356 @@
+/* 리셋공통 */
+/* @import url(../font/BMHANNAAir_ttf.ttf);
+@import url(../font/Jua-Regular.ttf);
+@import url(../font/NotoSansKR-Regular.otf); */
+
+body {
+    margin: 0;
+    color: #222;
+    font-family: 'NotoSans Kr';
+}
+.wrap {
+    overflow: hidden;
+}
+ul, hr, p {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+    font-family: 'jua';
+}
+a {
+    /* display: block;
+    width: 100%;
+    height: 100%; */
+    color: inherit;
+    text-decoration: none;
+}
+.w_line {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    transform: translateY(1px);
+}
+.contents_area{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.contents_area.on_place {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    top: 0 !important;
+    left: 0 !important;
+    transition: transform 1s, opacity 1s, top 1s, left 1s;
+}
+.title_hidden {
+    display: none;
+}
+/* 기타 */
+.text_small {
+    font-size: 13px;
+    line-height: 20px;
+}
+.text_bold {
+    font-weight: 800;
+}
+.o_price {
+    text-decoration: line-through;
+    color: #aaa;
+}
+.s_price {
+    font-size: 20px;
+    font-weight: 900;
+    color: #222;
+    position: relative;
+    top: -2px
+}
+.item_tag {
+    width: auto !important;
+    height: 15px;
+    padding-left: 3px;
+    position: relative;
+    top: 3px
+}
+.more_btn {
+    text-decoration: underline;
+    font-size: 14px;
+    text-align: right;
+    cursor: pointer;
+}
+.more_btn:hover {
+    text-decoration: underline;
+    color: #777;
+}
+.btn:active{
+    color: #555 !important;
+}
+.discount {
+    color: #e99260;
+    opacity: 0;
+    font-size: 18px;
+}
+.show_at_routine {
+    opacity: 0;
+    position: absolute;
+    z-index: -99;
+}
+.navi_box {
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.category {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.curr {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.red_alert {
+    color: #eb6c6c;
+    font-size: 11px;
+    margin-left: 2px;
+    display: none;
+}
+/* 네비게이션 */
+.navi_box {
+    font-size: 13px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.navi_box p{
+    float: right;
+    position: relative;
+    padding: 0 5px;
+}
+.navi_box p::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #96e5fd, #79d9ff);
+
+    position: absolute;
+    right: calc(100% + 2px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -999;
+
+    transition: right .3s, opacity .8s;
+}
+.navi_box p:hover::after {
+    right: 0px;
+    opacity: 0;
+}
+.navi_box span:hover {
+    color: #79d9ff;
+}
+/* 섹션: 아이템=>flex */
+.section {
+    width: 100%;
+    padding: 100px 0;
+}
+.sec_title {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.sec_title h1,
+.item_title h1 {
+    margin: 0 auto;
+    font-size: 48px;
+    /* jua폰트weight */
+    font-weight: 100;
+}
+.item_box {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item {
+    flex: 0 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+.item_title {
+    flex: 1 1 auto;
+    padding: 0 10px;
+
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+}
+.item_title h1:hover {
+    color: #555;
+}
+.item img {
+    width: 90%;
+    height: 75%;
+    transition: all .3s;
+}
+.item img:hover {
+    opacity: 0.8;
+}
+
+
+.sec_body {
+    width: 100%;
+}
+/* 애니메이션 */
+@keyframes sway {
+    0%, 100% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes up {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes brungbrung {
+    0% {
+        transform: translateY(0px) rotateY(-180deg);
+    }
+    100% {
+        transform: translateY(-2px) rotateY(-180deg);
+    }
+}
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+    50%, 100% {
+        opacity: 1;
+    }
+}
+/* ///// 반응형 시작 /////////////// */
+@media screen and (max-width: 1200px) {
+    .contents_area {
+        max-width: 1000px !important;
+    }
+    .section {
+        padding: 100px 0;
+    }
+    .sec_title h1, .item_title h1 {
+        font-size: 40px !important;
+    }
+    .item_title {
+        font-size: 20px;
+    }
+    .s_price {
+        font-size: 18px;
+    }
+    .o_price {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .contents_area {
+        max-width: calc(100% - 40px) !important;
+    }
+    /* .item {
+        flex: 0 0 calc((100% - (20px * 2)) / 3) !important;
+        margin-bottom: 50px;
+    } */
+    .sec_title h1, .item_title h1 {
+        font-size: 36px !important;
+    }
+    .sec_title p {
+        font-size: 22px !important;
+    }
+    .more_btn {
+        font-size: 14px;
+        padding-bottom: 5px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .contents_area {
+        max-width: calc(100% - 15px) !important;
+    }
+    /* .item {
+        flex: 0 0 calc((100% - (10px * 2)) / 3) !important;
+        margin-bottom: 30px;
+    } */
+    .sec_title h1, .item_title h1 {
+        font-size: 34px !important;
+    }
+    .sec_title p {
+        font-size: 20px !important;
+    }
+    .sec_title {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+@media screen and (max-width: 840px) {
+    .contents_area {
+        max-width: calc(100% - 20px) !important;
+    }
+    /* .item {
+        flex: 0 0 calc((100% - (10px * 2)) / 3) !important;
+        margin-bottom: 20px;
+    } */
+    .item_title {
+        font-size: 18px !important;
+    }
+    .o_price {
+        font-size: 12px !important;
+    }
+    .s_price {
+        font-size: 15px !important;
+    }
+    .item_tag{
+        top: 0;
+    }
+}
+@media screen and (max-width: 720px) {
+    .contents_area {
+        max-width: 100% !important;
+    }
+    .section {
+        padding: 80px 0;
+    }
+    .sec_title p {
+        font-size: 18px !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .section {
+        padding: 80px 0;
+    }
+    .sec_title h1, .item_title h1 {
+        font-size: 30px !important;
+    }
+    .sec_title p {
+        font-size: 14px !important;
+    }
+    .item_title {
+        font-size: 16px !important;
+    }
+    p, .o_price {
+        font-size: 12px !important;
+    }
+}

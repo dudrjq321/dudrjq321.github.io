@@ -1,0 +1,214 @@
+/* tab, filter 버튼ul */
+.tab_ul {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.tab_ul li {
+    padding: 7px 20px;
+    margin: 5px 20px;
+    border-radius: 5px;
+    background: #fff;
+    border-bottom: 3px solid #eee;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.tab_ul li:hover {
+    background: #eee;
+}
+.tab_ul #none {
+    display: none;
+}
+/* 섹션 */
+.section {
+    padding: 0;
+}
+.section .cate_banner img {
+    width: 100%;
+}
+.sec_title {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.item_box {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+
+    border: 3px solid;
+}
+#product_item{
+    flex: 0 0 calc((100% - (20px * 4)) / 4);
+}
+.item {
+    flex: 0 0 calc((100% - (20px * 4)) / 5);
+    margin-bottom: 10px;
+    padding-bottom: 50px;
+}
+
+
+.item_desc {
+    padding: 0 5px;
+}
+.item:hover {
+    transform: translateY(20px);
+    box-shadow: 0px 8px 8px 0 rgba(240, 240, 240, 0.3);
+}
+
+.search_box {
+    width: 500px;
+    height: 50px;
+    margin: 60px auto 80px;
+    background-repeat: no-repeat;
+    background-position: 10% 100px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,1);
+    border-radius: 25px; 
+}
+
+.txt_search {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    outline: none;
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: transparent;
+    font-size: 17px;
+}
+
+@media screen and (max-width: 1200px) {
+    .tab_ul {
+        justify-content: space-between;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+    .tab_ul li {
+        margin: 0;
+        padding: 7px 30px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .item_box {
+        gap: 15px;
+    }
+    .item {
+        flex: 0 0 calc((100% - (15px * 2)) / 3);
+    }
+}
+@media screen and (max-width: 960px) {}
+@media screen and (max-width: 840px) {
+    .tab_ul li {
+        font-size: 15px;
+    }
+    .item_box {
+        gap: 9px;
+    }
+    .item {
+        flex: 0 0 calc((100% - (10px * 2)) / 3);
+        padding-bottom: 30px;
+    }
+}
+/* 햄버거 */
+@media screen and (max-width: 720px) {
+    .tab_ul {
+        flex-wrap: wrap;
+        gap: 5px
+    }
+    .tab_ul li {
+        padding: 0;
+        flex: 1 1 calc(50% - 5px);
+        line-height: 40px;
+        text-align: center;
+    }
+    .tab_ul #none {
+        display: block;
+        cursor: default;
+        pointer-events: none;
+    }
+    span.info {
+        display: none;
+    }
+    .sec_title {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .item_box {
+        gap: 10px;
+    }
+    .item_title {
+        padding-top: 5px;
+    }
+    .item {
+        flex: 0 0 calc((100% - (10px * 1)) / 2);
+        margin-bottom: 0px !important;
+        padding-bottom: 50px;
+    }
+    .item_tag {
+        margin-top: 5px;
+    }
+}
+/* 아이템 한칸 */
+@media screen and (max-width: 420px) {
+    .item_box {
+        gap: 0px;
+    }
+    .item {
+        flex: 0 0 100%;
+    }
+    .sec_title h1, .item_title h1 {
+        font-size: 36px !important;
+    }
+    .item_title {
+        font-size: 20px !important;
+    }
+}
+@media screen and (max-width: 360px) {
+    .sec_title h1, .item_title h1 {
+        font-size: 34px !important;
+    }
+    .item_title {
+        font-size: 18px !important;
+    }
+}
+/* 메뉴 한칸 */
+@media screen and (max-width: 220px) {
+    .tab_ul {
+        gap: 0;
+    }
+    .tab_ul li {
+        flex: 1 1 100%;
+        text-align: center;
+        font-size: 13px;
+        line-height: 35px;
+    }
+    .tab_ul #none {
+        display: none;
+    }
+    .navi_box {
+        text-align: center;
+    }
+    .navi_box p {
+        width: 100%;
+    }
+    .navi_box p::after {
+        display: none;
+    }
+    .sec_title {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+    .sec_title h1, .item_title h1 {
+        font-size: 30px !important;
+    }
+    .item_title {
+        font-size: 15px !important;
+    }
+    .item {
+        padding-bottom: 40px;
+    }
+}

@@ -1,0 +1,12 @@
+/* 섹션 new */
+.new .item_img {
+    height: 380px;
+    position: relative;
+}
+.new .item_img img{
+    position: absolute;
+    transition: all .5s;
+}
+.new .item_img:hover img:last-child{
+    opacity: 0;
+}
