@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청정원</title>
+    <link rel="icon" href="img/logo/logo.png" type="image/x-icon" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script defer src="js/load_data.js"></script>
+    <script defer src="js/header_footer.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/item_page.js"></script>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link rel="stylesheet" href="css/item_page.css">
+    
+    <style>
+        @font-face {
+            font-family: 'Hanna Air';
+            src: url(font/BMHANNAAir_ttf.ttf);
+        }
+        @font-face {
+            font-family: 'NotoSans Kr';
+            src: url(font/NotoSansKR-Regular.otf);
+        }
+        @font-face {
+            font-family: 'jua';
+            src: url(font/Jua-Regular.ttf);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="dimmer"></div>
+        <header class="header">
+        </header>
+        <main class="main">
+            <!-- 섹션 -->
+            <div class="navi_box contents_area"></div>
+            <section class="section top contents_area">
+                <h1 class="title_hidden">아이템 상세정보</h1>
+                <div class="left">
+                    <div class="item_img">
+                      <img src="img/item/8.jpg" id="big_img" alt="상품이미지">
+                        </div>
+                </div>
+                <div class="info right">
+                    <p>
+                        <span class="product_name" id="product_name">
+                            베이컨 & 크림 까르보나라
+                        </span>
+                    </p>
+                    <p class="product_info">
+                    </p>
+                    <table class="item_info_table">
+                        <tr>
+                            <td class="name">소비자가</td>
+                            <td class="o_price" >
+                                <span id="o_price">
+                                    22,000
+                                </span>
+                                원
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="name">판매가</td>
+                            <td class="s_price">
+                                <span id="s_price">
+                                    19,000
+                                </span>
+                                원
+                                <span class="discount show_at_routine">
+                                    (정기배송 4% 추가할인)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="name">배송비</td>
+                            <td>
+                                <p>2,500원 (30,000원 이상 구매 시 무료배송)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="name">
+                                적립금
+                            </td>
+                            <td>
+                                <span class="point"></span>
+                                1,000원
+                                <span class="point_per"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="name text_bold">배송방법(필수)</td>
+                            <td>
+                                <input type="radio" name="shipping" id="ship_night"><label for="ship_night">
+                                    새벽배송
+                                </label>
+                                <input type="radio" name="shipping" id="ship_day"><label for="ship_day">
+                                    택배배송
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="show_at_routine">
+                            <td class="name">
+                                <span class="ship_night text_bold">
+                                    첫 배송요일(필수)
+                                </span>
+                            </td>
+                            <td>
+                                <div class="btn_day_box">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="name"></td>
+                            <td>
+                                <div class="show_at_routine ship_night">
+                                    <p class="red_alert">배송시작일은 월~금요일만 가능합니다.</p>
+                                    <div class="print_selected_day"></div>
+                                    <div class="quickest_day">
+                                        가장 빠른 배송일은
+                                        <span class="next_day">
+                                            X
+                                        </span>요일 새벽입니다.
+                                    </div>
+                                </div>
+                                <div class="text_small">
+                                    (11시 이전 주문 시 당일출고, 금요일 11시 이후에는 월요일 배송)
+                                </div>
+                                <p class="ship_info night">
+                                    선택하신 배송방법은 '새벽배송'입니다. (밤 12시 ~ 새벽 7시)
+                                </p>
+                                <p class="ship_info day">
+                                    선택하신 배송방법은 '택배배송'입니다.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="item_info_table">
+                        <tr>
+                            <td class="name">
+                                <p>
+                                    추가옵션
+                                </p>
+                            </td>
+                            <td>
+                                <select name="_select_shipping" id="_select_shipping">
+                                    <option label="청정원 베이컨&크림 까르보나라 파스타소스 350g : 1개" value="-1" selected>
+                                    <option label="청정원 조개&화이트와인 봉골레 파스타소스 360g : 1개" value="1" selected>
+                                     
+                                </select>
+                                <div></div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="selected_option_box">
+                    </div>
+                    <div class="total">
+                        TOTAL:
+                        <span id="total_price">19,000원</span>(<span id="total_qty">1</span>개)
+                    </div>
+                    <div class="btn_box">
+                        <div class="btn btn_buy">구매하기</div>
+                        <div class="btn btn_addcart">장바구니 추가</div>
+                        <div class="btn btn_wishlist">관심상품 추가</div>
+                    </div>
+                </div>  
+            </section>
+            <section class="section bottom">
+                <h1 class="title_hidden">아이템 상세이미지</h1>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="fbody contents_area">
+                <div class="flogo">
+                    <a href="index.html">
+                        로고
+                    </a>
+                </div>
+                <div class="ftext">
+                    <h2>제품관련 고객상담</h2>
+                    <p class="strong">온라인몰 : 080-019-9119</p>
+                    <p>Toss Payments 서비스</p>
+                    <p>평일 9:00-17:00</p>
+                    <p>(토,일요일, 공휴일 휴무)</p>
+                </div>
+                <div class="ftext">
+                    <h2>대상주식회사</h2>
+                    <table>
+                        <tr>
+                            <td>주소</td>
+                            <td>서울시 종로구 창경궁로 120(인의동)</td>
+                        </tr>
+                        <tr>
+                            <td>대표이사</td>
+                            <td>임정배</td>
+                        </tr>
+                        <tr>
+                            <td>통신판매업 제</td>
+                            <td>2021-서울종로-2150호</td>
+                        </tr>
+                        <tr>
+                            <td>사업자등록번호</td>
+                            <td>109-81-14886</td>
+                        </tr>
+                        <tr>
+                            <td>호스팅</td>
+                            <td>대상(주)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
